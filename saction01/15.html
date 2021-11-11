@@ -25,14 +25,14 @@ oo
             function solution(s){  
                 let answer = '' ;
                 let num = 0;
-                let midNum = s.length/2
+                let midNum = s.length/2;
 
                 if(s.length%2 == 0){
                     answer = s[midNum-1] + s[midNum]; 
                 } else {
-                    answer = s[Math.floor(midNum)]
+                    answer = s[Math.floor(midNum)];
                 }
-                num = s.length / 2
+                num = s.length / 2;
                 
                 return answer;
             }
