@@ -20,14 +20,15 @@ kset
     <body>
         <script>
             function solution(s){  
-                let answer="";
-                for(let i=0; i<s.length; i++){	//인덱스를 알아야하기 때문에 for of 사용하면 안됨
+                let answer = "";
+                for(let i=0; i<s.length; i++){
                     if(s.indexOf(s[i]) == i) answer += s[i];
                 }
-                
                 return answer;
             }
-            console.log(solution("ksekkset"));
+
+            
+            console.log(solution("asekkset"));
         </script>
     </body>
 </html>
