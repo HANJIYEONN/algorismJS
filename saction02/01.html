@@ -24,7 +24,14 @@ N(1<=N<=100)개의 정수를 입력받아, 자신의 바로 앞 수보다 큰 �
         <script>
             function solution(arr){         
                 let answer=[];
+                answer.push(arr[0]);
 
+                for(let i=0; i<arr.length ; i++){
+                    if (arr[i-1] < arr[i]){
+                        answer.push(arr[i])
+                    }
+
+                }
                 return answer;
             }
 
