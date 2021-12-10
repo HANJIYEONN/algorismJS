@@ -34,13 +34,24 @@ N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선�
         <script>
             function solution(arr){  
                 let answer;
-                //let 
+                let max = 0;
+                let tempNum = 0;
+                const reducer = (accumulator, curr) => accumulator + curr;
+                
+                // 각 행의 합
                 for(let i=0; i<arr.length; i++){
+                    tempNum = arr[i].reduce(reducer);
+                    if(max < tempNum ) max = tempNum
+                }
 
-                }
+                // 각 열의 합
                 for(let i=0; i<arr[0].length; i++){
-                    
+                    for(let j=0; j <arr.length; j++) {
+                        
+                    }
                 }
+
+                // 대각선의 합
                 for(let i=0; i<arr[0].length; i++){
                     
                 }
