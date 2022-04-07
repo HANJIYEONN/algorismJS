@@ -33,29 +33,24 @@ N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선�
     <body>
         <script>
             function solution(arr){  
-                let answer;
-                let max = 0;
-                let tempNum = 0;
-                const reducer = (accumulator, curr) => accumulator + curr;
-                
-                // 각 행의 합
-                for(let i=0; i<arr.length; i++){
-                    tempNum = arr[i].reduce(reducer);
-                    if(max < tempNum ) max = tempNum
-                }
-
-                // 각 열의 합
-                for(let i=0; i<arr[0].length; i++){
-                    for(let j=0; j <arr.length; j++) {
-                        
+                let answer =Number.MIN_SAFE_INTEGER;
+                let n =arr.length;
+                let sum1=sum2=0;//1-행의 합/2-열의 합
+                for(let i=0; i<n; i++){
+                    aum1=sum2=0
+                    for(let j=0; j<n; j++){
+                        sum1=arr[i][j];
+                        sum2=arr[j][i];
                     }
+                    answer= Math.max(answer, sum1, sum2) // answer, sum1, sum2중에 큰값이 answer에 들어감
                 }
 
-                // 대각선의 합
-                for(let i=0; i<arr[0].length; i++){
-                    
+                sum1=sum2=0;
+                for(let i=0; i<n; i++){
+                    sum1+=arr[i][i];
+                    sum2+=arr[i][n-i-1];
                 }
-
+                answer= Math.max(answer, sum1, sum2) 
 
                 return answer;
             }
